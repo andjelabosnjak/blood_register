@@ -35,7 +35,7 @@
         @foreach($transfuziology_dept as $dept)
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="card">
-                    <img src="{{ asset('images/zz.jpg') }}">
+                    <img src="{{ asset('images/blood_hand.jpg') }}">
                     <div class="card-block">
                         <div class="container">
                         <h3 class="card-title"><a style="color: #bd1e24;">{!!$dept->name!!}</a></h3>

@@ -14,13 +14,13 @@
 
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block w-100" src="{{ asset('images/loo.PNG') }}" alt="First slide">
+        <img class="d-block w-100" src="{{ asset('images/first_slider.PNG') }}" alt="First slide">
       </div><!--/carousel-item active-->
       <div class="carousel-item">
-        <img class="d-block w-100" src="{{ asset('images/k.jpg') }}" alt="Second slide">
+        <img class="d-block w-100" src="{{ asset('images/second_slide.jpg') }}" alt="Second slide">
       </div><!--/carousel-item-->
       <div class="carousel-item">
-        <img class="d-block w-100" src="{{ asset('images/dd.PNG') }}" alt="Third slide">
+        <img class="d-block w-100" src="{{ asset('images/third_slide.PNG') }}" alt="Third slide">
       </div><!--/carousel-item-->
     </div><!--/carusel-inner-->
 
@@ -106,7 +106,7 @@
     </div><!--/col-sm-6-->
     <div class="col-sm-6">
       <center>
-        <img class="d-block w-100" src="{{ asset('images/iii.jpg') }}" alt="Blood image">
+        <img class="d-block w-100" src="{{ asset('images/blood_saves_life.jpg') }}" alt="Blood image">
       </center>
     </div><!--/col-sm-6-->
   </div><!--/row-->

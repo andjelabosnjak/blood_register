@@ -57,6 +57,30 @@ Route::prefix('transfuziologydept')->middleware('transfuziologydept')->group(fun
     Route::delete('alldonorarrival/{donor_arrival}','DonorArrivalsController@destroy');
     
     Route::get('bloodstatistics','DonorArrivalsController@statistics')->name('bloodstatistics');
+    Route::get('searchdonorarrivals','SearchController@searchdonorindonorarrivals')->name('searchdonorindonorarrivals');
+
+
+});
+
+Route::prefix('admin')->middleware('admin')->group(function () {
+
+    Route::get('/', 'AdminController@index')->name('admin');
+
+    Route::get('alldonors','AdminController@all_donors')->name('alldonors');
+
+    Route::get('alldepts','AdminController@all_depts')->name('alldepts');
+    Route::get('donor/create','AdminController@create_donor')->name('createdonor');
+    Route::post('alldonors','AdminController@store_donor')->name('storedonor');
+    Route::get('depts/create','AdminController@create_trans_dept')->name('createdept');
+    Route::post('alldepts','AdminController@store_dept')->name('storedept');
+
+    Route::get('alldonors/{donor}/edit','AdminController@edit_donor')->name('editdonor');
+    Route::put('alldonors/{donor}','AdminController@update_donor')->name('updatedonor');
+    Route::delete('alldonors/{donor}','AdminController@destroy_donor');
+
+    Route::get('alldepts/{dept}/edit','AdminController@edit_dept')->name('editdept');
+    Route::put('alldepts/{dept}','AdminController@update_dept')->name('updatetransdept');
+    Route::delete('alldepts/{dept}','AdminController@destroy_dept');
 
 
 });

@@ -5,7 +5,7 @@
 @section('content')
 <div class="container-fluid">
         <div class="row">
-                <div class="col-sm-8">
+                <div class="col-sm-8"> 
                         <div class="container" style="background-color:#F5F5DC;"><br>
                                 <h3 style="color:#bd1e24;">Dodaj novi dolazak</h3><hr>
 
@@ -65,7 +65,7 @@
                 </div><!--/col-sm-8-->
                 <div class="col-sm-4">
                         <center>
-                                <img class="d-block w-100" src="{{ asset('images/pr.jpg') }}" alt="Blood image">
+                                <img class="d-block w-100" src="{{ asset('images/blood_transfuzion.PNG') }}" alt="Blood image">
                         </center>
                 </div><!--/col-sm-4-->
         </div><!--row-->                  

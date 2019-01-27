@@ -5,8 +5,8 @@
 @section('content')
 <div class="container-fluid">
     <div class="row" >
-        <div class="col-sm-8">
-            <div class="container-fluid"> <br> 
+        <div class="col-sm-9">
+            <div class="container-fluid">
                 <div class="card-title" style="color:#bd1e24;"><h3>Zahtjevi na čekanju</h3></div><br>
                 <div class="card-text">
                     @if(count($pending_donation_requests)>0)
@@ -49,9 +49,9 @@
                 </div><!--/card-text-->
             </div><!--/container-fluid-->
         </div><!--/col-sm-8-->
-        <div class="col-sm-4">
-            <center>
-                <img class="d-block w-100" src="{{ asset('images/pr.jpg') }}" alt="Blood image">
+        <div class="col-sm-3">
+            <center><br><br>
+                    <img class="d-block w-100" src="{{ asset('images/blood_transfuzion.PNG') }}" alt="Blood image">
             </center>
         </div><!--/col-sm-4-->
     </div><!--/row-->

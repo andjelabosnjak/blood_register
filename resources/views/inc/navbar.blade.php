@@ -56,7 +56,13 @@
             <li class="nav-item">
                 <a class="nav-link active" href="{{ route ('home')}}" style="color:#bd1e24;"><b>Početna stranica</b></a>
             </li>
-
+            @auth
+            @if(auth()->user()->user_type == 'admin')
+            <li class="nav-item">
+                <a class="nav-link active" href="{{ route ('admin')}}" style="color:#bd1e24;"><b>Administracija</b></a>
+            </li>
+            @endif
+            @endauth
             @if(!Auth::check() || auth()->user()->user_type == 'donor' )
             <li class="nav-item">
                 <b><a class="nav-link" href="{{ route('aboutbloodgiving') }}" style="color:#bd1e24;">Zašto darivati krv?</a></b>

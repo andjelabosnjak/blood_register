@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\User;
+use App\DonorArrivals;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -24,6 +25,24 @@ class SearchController extends Controller
         
     }
 
+    public function searchdonorindonorarrivals(){
+
+        $search = \Request::get('search'); // use global request to get the param of URI
+
+        $donor_arrivals = DonorArrivals::join('users','donor_arrivals.donor_id','=','users.id')
+                ->orWhere('name','LIKE','%'.$search.'%')
+                ->orWhere('date','LIKE','%'.$search.'%')
+                ->orWhere('blood_group','LIKE','%'.$search.'%')
+                ->orWhere('blood_presure','LIKE','%'.$search.'%')
+                ->orWhere('hemoglobin_level','LIKE','%'.$search.'%')
+                ->orWhere('status','LIKE','%'.$search.'%')
+                ->orWhere('note','LIKE','%'.$search.'%')
+                ->select('*','donor_arrivals.donor_id as donor_id')
+                ->orderBy('donor_id')
+                ->get();
+        
+        return view('donor_arrivals.search')->with('donor_arrivals',$donor_arrivals);
+    }
    
 
 }

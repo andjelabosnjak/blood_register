@@ -6,7 +6,17 @@
 <div class="container-fluid">
     <div class="row" >
         <div class="col-sm-9">
-            <div class="container-fluid"><br> 
+                {!! Form::open(['method'=>'GET','action' => 'SearchController@searchdonorindonorarrivals','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
+                <div class="input-group custom-search-form col-5 pull-right">
+                    <input type="text" class="form-control" name="search" placeholder="Pretraži...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="submit">
+                        <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </div><!--/input-group custom-search-form col-5 pull-right-->
+            {!! Form::close() !!}
+            <div class="container-fluid">
                 <div class="card-title" style="color:#bd1e24;"><h3>Pregled povijesti svih dolazaka</h3></div><br>
                 <div class="card-text">
                     @if(count($donor_arrivals)>0)
@@ -41,13 +51,13 @@
                                 </td>
                                 <td>{{ $arrival->note}}</td>
                                 <td> 
-                                    <a href="{{route('editdonorarrival',['donor_arrival' =>  $arrival->id  ])}}" class="btn btn-light">Uredi</a>
+                                    <a href="{{route('editdonorarrival',['donor_arrival' =>  $arrival->id  ])}}" class="btn btn-light"><i class="fa fa-edit"></i> Uredi</a>
                                 </td>
                                 <td>
                                     <!--Delete-->
                                     {!!Form::open(['action' => ['DonorArrivalsController@destroy',$arrival->id],'method'=>'POST','onsubmit' => "return confirm('Jeste li sigurni da želite izbrisati?')"])!!}
                                     {{Form::hidden('_method','DELETE')}}   
-                                    {{Form::submit('Izbriši',['class' => 'btn btn-danger'])}}    
+                                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i> Izbriši</button>   
                                     {!!Form::close()!!}
                                 </td>
                             </tr>
@@ -64,8 +74,8 @@
             </div><!--/container-fluid-->
         </div><!--/col-sm-8-->
         <div class="col-sm-3">
-            <center>
-                <img class="d-block w-100" src="{{ asset('images/pr.jpg') }}" alt="Blood image">
+            <center><br><br><br>
+                <img class="d-block w-100" src="{{ asset('images/blood_transfuzion.PNG') }}" alt="Blood image">
             </center>
         </div><!--/col-sm-4-->
     </div><!--/row-->
