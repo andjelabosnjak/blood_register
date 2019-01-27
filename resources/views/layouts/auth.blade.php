@@ -35,7 +35,7 @@
     </style> 
 
 </head>
-<body style="background-image: url({{ asset('images/zuz.PNG') }});background-size:cover; background-repeat:no-repeat;background-position: center center;">
+<body style="background-image: url({{ asset('images/background.PNG') }});background-size:cover; background-repeat:no-repeat;background-position: center center;">
     <div id="app">
         <!-- red navbar-->
         <nav class="navbar navbar-toggleable-md navbar-light bg-danger" style="background-color: #d9534f !important; height:30px;"></nav>
