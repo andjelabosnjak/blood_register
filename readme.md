@@ -9,7 +9,6 @@ $ cd blood_register
 $ cp .env.example .env and fill your database information
 $ composer install
 $ php artisan key:generate
-$ php artisan storage:link
 $ php artisan migrate
 $ php artisan db:seed
 ```
