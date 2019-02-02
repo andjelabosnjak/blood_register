@@ -101,7 +101,7 @@
     <!-- Footer -->
     <footer class="footer bg-danger" style="position: absolute;bottom: 0;width: 100%;height: 40px;line-height: 40px;">
         <!-- Copyright -->
-        <div class="footer-copyright text-center text-white">© 2019p Copyright:
+        <div class="footer-copyright text-center text-white">© 2019 Copyright:
             <a class="text-light" href="http://fsre.sum.ba/naslovnica/" target="_blank"><i>PIS - TIM4</i></a>
         </div>
         <!-- /Copyright -->

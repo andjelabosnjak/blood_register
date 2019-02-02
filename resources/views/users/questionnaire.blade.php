@@ -68,7 +68,7 @@
         <div class="col-sm-4">
             <div class="container" >
                 <center>
-                    <img class="d-block w-100" src="{{ asset('images/blood_icon.PNG') }}" alt="Blood image">
+                    <img class="d-block w-100" src="{{ asset('images/blood_transfuzion.PNG') }}" alt="Blood image">
                 </center>
             </div><!--/container-->
         </div><!--/col-sm-4-->

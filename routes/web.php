@@ -47,6 +47,7 @@ Route::prefix('transfuziologydept')->middleware('transfuziologydept')->group(fun
     Route::put('pendingdonationrequest/{donation_request}/approve','DonationRequestsController@approve')->name('approvedonationrequest');
     Route::put('pendingdonationrequest/{donation_request}/decline','DonationRequestsController@decline')->name('declinedonationrequest');
     Route::get('alldonationrequests','DonationRequestsController@all_donation_requests')->name('alldonationrequests');
+    Route::get('pendingdonationrequests/{donor}','DonationRequestsController@show_donor')->name('showdonor');
 
     //Donor Arrivals
     Route::get('donorarrival/create','DonorArrivalsController@create')->name('createnewdonorarrival');

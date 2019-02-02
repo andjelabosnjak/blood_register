@@ -8,7 +8,7 @@
     @isset($trans_dept)
         <div class="row"><br><br>
             <div class="col-sm-3">
-                <img src="{{ asset('images/blood_plus.PNG') }}">
+                    <img class="d-block w-100" src="{{ asset('images/blood_plus.PNG') }}">
             </div><!--/col-sm-3-->
             <div class="col-sm-9">
             <h3 class="card-title"><a style="color: #bd1e24;">{!!$trans_dept->name!!}</a></h3>

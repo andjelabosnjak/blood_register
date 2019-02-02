@@ -5,7 +5,7 @@
 @section('content')
 <div class="container-fluid">
     <div class="row" >
-        <div class="col-sm-9">
+        <div class="col-sm-10">
                 {!! Form::open(['method'=>'GET','action' => 'SearchController@searchdonorindonorarrivals','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
                 <div class="input-group custom-search-form col-5 pull-right">
                     <input type="text" class="form-control" name="search" placeholder="Pretraži...">
@@ -73,9 +73,8 @@
                 </div><!--/card-text-->
             </div><!--/container-fluid-->
         </div><!--/col-sm-8-->
-        <div class="col-sm-3">
-            <center><br><br><br>
-                <img class="d-block w-100" src="{{ asset('images/blood_transfuzion.PNG') }}" alt="Blood image">
+        <div class="col-sm-2">
+            <center>
             </center>
         </div><!--/col-sm-4-->
     </div><!--/row-->

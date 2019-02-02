@@ -30,13 +30,18 @@ class SearchController extends Controller
         $search = \Request::get('search'); // use global request to get the param of URI
 
         $donor_arrivals = DonorArrivals::join('users','donor_arrivals.donor_id','=','users.id')
-                ->orWhere('name','LIKE','%'.$search.'%')
-                ->orWhere('date','LIKE','%'.$search.'%')
-                ->orWhere('blood_group','LIKE','%'.$search.'%')
-                ->orWhere('blood_presure','LIKE','%'.$search.'%')
-                ->orWhere('hemoglobin_level','LIKE','%'.$search.'%')
-                ->orWhere('status','LIKE','%'.$search.'%')
-                ->orWhere('note','LIKE','%'.$search.'%')
+                ->where('trans_dept_id' ,'=',auth()->user()->id)
+                ->where( function ( $query ) use ($search)
+                {
+                    $query->where('name','LIKE','%'.$search.'%')
+                    ->orWhere('name','LIKE','%'.$search.'%')
+                    ->orWhere('date','LIKE','%'.$search.'%')
+                    ->orWhere('blood_group','LIKE','%'.$search.'%')
+                    ->orWhere('blood_presure','LIKE','%'.$search.'%')
+                    ->orWhere('hemoglobin_level','LIKE','%'.$search.'%')
+                    ->orWhere('status','LIKE','%'.$search.'%')
+                    ->orWhere('note','LIKE','%'.$search.'%');
+                })
                 ->select('*','donor_arrivals.donor_id as donor_id')
                 ->orderBy('donor_id')
                 ->get();

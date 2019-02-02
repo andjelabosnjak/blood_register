@@ -22,7 +22,7 @@
                         <tbody>
                             @foreach($pending_donation_requests as $req)
                             <tr>
-                                <td>{{ $req->donor->name}}</td>
+                                <td><b><a style="text-decoration:underline;color:black;" href="{{ route('showdonor',['donor' => $req->donor->id ])}}" >{{ $req->donor->name}}</a></b></td>
                                 <td>{{ $req->wanted_date}}</td>
                                 <td>  
                                     <!--Approve donation request form-->

@@ -10,7 +10,7 @@ class DonorArrivalsController extends Controller
 {
     public function index(){
 
-        $donor_arrivals=DonorArrivals::orderBy('id','desc')->get();
+        $donor_arrivals=DonorArrivals::where('trans_dept_id' ,'=',auth()->user()->id)->orderBy('id','desc')->get();
 
         return view('donor_arrivals.index')->with('donor_arrivals',$donor_arrivals);
     }
@@ -50,14 +50,14 @@ class DonorArrivalsController extends Controller
 
     public function statistics(){
 
-        $a_negative = DonorArrivals::where('blood_group','=','A-')->where('status','=','uspješno')->count();
-        $a_positive = DonorArrivals::where('blood_group','=','A+')->where('status','=','uspješno')->count();
-        $b_negative = DonorArrivals::where('blood_group','=','B-')->where('status','=','uspješno')->count();
-        $b_positive = DonorArrivals::where('blood_group','=','B+')->where('status','=','uspješno')->count();
-        $zero_negative = DonorArrivals::where('blood_group','=','0-')->where('status','=','uspješno')->count();
-        $zero_positive = DonorArrivals::where('blood_group','=','0+')->where('status','=','uspješno')->count();
-        $ab_negative = DonorArrivals::where('blood_group','=','AB-')->where('status','=','uspješno')->count();
-        $ab_positive = DonorArrivals::where('blood_group','=','AB+')->where('status','=','uspješno')->count();
+        $a_negative = DonorArrivals::where('blood_group','=','A-')->where('status','=','uspješno')->where('trans_dept_id' ,'=',auth()->user()->id)->count();
+        $a_positive = DonorArrivals::where('blood_group','=','A+')->where('status','=','uspješno')->where('trans_dept_id' ,'=',auth()->user()->id)->count();
+        $b_negative = DonorArrivals::where('blood_group','=','B-')->where('status','=','uspješno')->where('trans_dept_id' ,'=',auth()->user()->id)->count();
+        $b_positive = DonorArrivals::where('blood_group','=','B+')->where('status','=','uspješno')->where('trans_dept_id' ,'=',auth()->user()->id)->count();
+        $zero_negative = DonorArrivals::where('blood_group','=','0-')->where('status','=','uspješno')->where('trans_dept_id' ,'=',auth()->user()->id)->count();
+        $zero_positive = DonorArrivals::where('blood_group','=','0+')->where('status','=','uspješno')->where('trans_dept_id' ,'=',auth()->user()->id)->count();
+        $ab_negative = DonorArrivals::where('blood_group','=','AB-')->where('status','=','uspješno')->where('trans_dept_id' ,'=',auth()->user()->id)->count();
+        $ab_positive = DonorArrivals::where('blood_group','=','AB+')->where('status','=','uspješno')->where('trans_dept_id' ,'=',auth()->user()->id)->count();
 
         return view('donor_arrivals.statistics')->with(compact('a_negative','a_positive','b_negative','b_positive','zero_negative','zero_positive','ab_negative','ab_positive'));
     }
