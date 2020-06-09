@@ -14,7 +14,8 @@ $ php artisan db:seed
 
 
 ```
-<a href="http://bloodregister.000webhostapp.com/">Link na gotov projekt</a>
+<hr>
+<a href="http://bloodregister.000webhostapp.com/">Link na gotov projekt</a><br>
 <h2>Kratki opis</h2>
 Web aplikacija je prvenstveno namjenjena za dvije vrste korisnika - Darivatelje krvi i Transfuziološke ustanove. Pohrana podataka uključuje podatke poput povijesti dolazaka, razlozi nemogućnosti darivanja krvi, osobnih podataka darivatelja i slično. Darivateljima je olakšano pronalaženje važnih informacija vezanih za darivanje krvi. Također postoji mogućnost rezervacije termina koji odobrava transfuziološka ustanova.
 
