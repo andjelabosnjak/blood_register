@@ -1,6 +1,18 @@
 <h1>Registar dobrovoljnih darivatelja krvi - BLOOD REGISTER</h1>
 <hr>
 
+## Instalacija
+
+```
+$ git clone https://github.com/andjelabosnjak/blood_register.git
+$ cd blood_register
+$ cp .env.example .env and fill your database information
+$ composer install
+$ php artisan key:generate
+$ php artisan migrate
+$ php artisan db:seed
+
+
 ```
 <a href="http://bloodregister.000webhostapp.com/">Link na gotov projekt</a>
 <h2>Kratki opis</h2>
@@ -37,14 +49,3 @@ Detalji za prijavu u sustav
 <p>Transfuzijska ustanova u/p: skbmo@mail.com/123456</p>
 <p>Darivatelj u/p: andjela@mail.com/123456</p>
 
-
-## Instalacija
-
-```
-$ git clone https://github.com/andjelabosnjak/blood_register.git
-$ cd blood_register
-$ cp .env.example .env and fill your database information
-$ composer install
-$ php artisan key:generate
-$ php artisan migrate
-$ php artisan db:seed
